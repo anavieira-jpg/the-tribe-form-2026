@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindera | Join Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --m-black: #000000;
+            --m-white: #ffffff;
+            --m-gray-light: #f8f8f8;
+            --m-gray-medium: #e0e0e0;
+            --m-gray-dark: #666666;
+            --m-accent: #ffed00;
+        }
+
+        * { box-sizing: border-box; transition: all 0.25s ease; }
+
+        .header {
+            width: 100%;
+            background-color: var(--m-accent);
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: -1px;
+            color: var(--m-black);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--m-white);
+            color: var(--m-black);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 1100px;
+            padding: 80px 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 100px;
+        }
+
+        .info-panel {
+            position: sticky;
+            top: 80px;
+            height: fit-content;
+        }
+
+        .logo {
+            display: none;
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 0.9;
+            margin: 0 0 40px 0;
+            letter-spacing: -4px;
+        }
+
+        .manifesto {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--m-gray-dark);
+            max-width: 400px;
+        }
+
+        .tags {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            border: 1px solid var(--m-black);
+            padding: 6px 14px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            background-color: var(--m-accent);
+        }
+
+        .form-panel {
+            background-color: var(--m-gray-light);
+            padding: 60px;
+            border-radius: 4px;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 45px;
+        }
+
+        input[type="text"], 
+        input[type="email"], 
+        input[type="url"] {
+            width: 100%;
+            padding: 15px 0;
+            font-size: 1.2rem;
+            border: none;
+            border-bottom: 2px solid var(--m-gray-medium);
+            background: transparent;
+            font-family: 'Space Grotesk', sans-serif;
+            outline: none;
+        }
+
+        input:focus {
+            border-bottom-color: var(--m-black);
+        }
+
+        label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--m-gray-dark);
+            display: block;
+        }
+
+        .file-drop-area {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 25px;
+            border: 2px dashed var(--m-gray-medium);
+            background-color: var(--m-white);
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .file-drop-area:hover {
+            border-color: var(--m-black);
+        }
+
+        .file-input {
+            position: absolute;
+            left: 0; top: 0; height: 100%; width: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-msg { font-size: 0.9rem; color: var(--m-gray-dark); }
+
+        .legal-box {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid var(--m-gray-medium);
+            font-size: 0.8rem;
+            color: var(--m-gray-dark);
+            line-height: 1.5;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-top: 25px;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--m-black);
+        }
+
+        .checkbox-container input {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--m-black);
+        }
+
+        .btn-submit {
+            margin-top: 50px;
+            width: 100%;
+            padding: 25px;
+            background-color: var(--m-black);
+            color: var(--m-white);
+            border: none;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--m-accent);
+            color: var(--m-black);
+            letter-spacing: 4px;
+        }
+
+        @media (max-width: 900px) {
+            .wrapper { grid-template-columns: 1fr; padding: 40px 20px; }
+            h1 { font-size: 3.5rem; }
+            .info-panel { position: static; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-logo">MINDERA_</div>
+</header>
+
+<div class="wrapper">
+    <section class="info-panel">
+        <div class="logo">MINDERA_</div>
+        <h1>Join<br>Us.</h1>
+        <div class="manifesto">
+            <p>Olá! Queremos conhecer pessoas apaixonadas por tecnologia. Na Mindera, construímos software com propósito, autonomia e colaboração.</p>
+            <p>Se queres estar no nosso radar para o futuro, deixa aqui o teu CV.</p>
+        </div>
+        <div class="tags">
+            <div class="tag">Crafting Software</div>
+            <div class="tag">No Corporate Fuss</div>
+            <div class="tag">Diversity Matters</div>
+        </div>
+    </section>
+
+    <section class="form-panel">
+        <form id="mindera-form">
+            <div class="form-group">
+                <label for="name">1. Nome</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">2. Email Address</label>
+                <input type="email" id="email" name="email" placeholder="hello@world.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="role">3. Current Role</label>
+                <input type="text" id="role" name="role" placeholder="Software Engineer" required>
+            </div>
+
+            <div class="form-group">
+                <label>4. Curriculum Vitae (PDF/DOCX)</label>
+                <div class="file-drop-area">
+                    <span class="file-msg" id="file-msg">Arraste o ficheiro ou clique aqui</span>
+                    <input class="file-input" type="file" name="cv" id="cv" accept=".pdf,.docx">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="linkedin">5. LinkedIn</label>
+                <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/user">
+            </div>
+
+            <div class="legal-box">
+                <p>By clicking on submitting you declare that you understand that the Data Controller of your personal data is <strong>EngMindera Software Engineering, S.A</strong> with NIPC 513199560, head office at Porto.</p>
+                <p>EngMindera Software Engineering is part of the <a href="https://mindera.com/group-companies" target="_blank" style="color: var(--m-black);">Mindera Group</a> with which it may share your personal data for the purposes related to this submission.</p>
+                <p>You also declare, on your honor, that all the information provided on this application form is true.</p>
+                <p>Finally, the data requested here will be kept for the legally prescribed period.</p>
+                <p>You can exercise your right of access, rectification, erasure, opposition, limitation and portability, or withdraw this consent, where applicable, without this affecting the lawfulness of the processing carried out until then, by writing to the contacts indicated below.</p>
+                <p>You have the right to lodge a complaint with the competent supervisory authority, the National Data Protection Commission.</p>
+                <p>For any further questions relating to data protection, privacy and information security, please contact the Data Protection Officer at <a href="mailto:privacy@mindera.com" style="color: var(--m-black);">privacy@mindera.com</a>.</p>
+
+                <label class="checkbox-container">
+                    <input type="checkbox" name="terms" id="terms" required>
+                    <span>I AGREE AND UNDERSTAND</span>
+                </label>
+            </div>
+
+            <button type="submit" class="btn-submit" id="btn-submit">Enviar Candidatura</button>
+
+            <div id="form-msg" style="display:none; margin-top: 20px; font-weight:700; font-size:0.9rem;"></div>
+        </form>
+    </section>
+</div>
+
+<script>
+    // Show filename when file is selected
+    document.getElementById('cv').addEventListener('change', function () {
+        const msg = this.files[0] ? this.files[0].name : 'Arraste o ficheiro ou clique aqui';
+        document.getElementById('file-msg').textContent = msg;
+    });
+
+    // Convert file to base64
+    function toBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result.split(',')[1]);
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+        });
+    }
+
+    document.getElementById('mindera-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxBOkUTqkWB44cBy8GpC2icg6rCfRJNbrrF2CxkZrEJn2GAnRBisW7ez1bUT1mD71xyOw/exec';
+
+        const btn = document.getElementById('btn-submit');
+        const msgEl = document.getElementById('form-msg');
+
+        btn.textContent = 'A enviar...';
+        btn.disabled = true;
+        msgEl.style.display = 'none';
+
+        const cvFile = document.getElementById('cv').files[0];
+
+        const data = {
+            timestamp: new Date().toISOString(),
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            role: document.getElementById('role').value,
+            linkedin: document.getElementById('linkedin').value,
+            cvName: cvFile ? cvFile.name : '',
+            cvType: cvFile ? cvFile.type : '',
+            cvData: cvFile ? await toBase64(cvFile) : '',
+        };
+
+        try {
+            await fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            msgEl.style.display = 'block';
+            msgEl.style.color = 'green';
+            msgEl.textContent = '✓ Candidatura enviada com sucesso!';
+            this.reset();
+            document.getElementById('file-msg').textContent = 'Arraste o ficheiro ou clique aqui';
+            btn.textContent = 'Enviar Candidatura';
+            btn.disabled = false;
+        } catch (err) {
+            msgEl.style.display = 'block';
+            msgEl.style.color = 'red';
+            msgEl.textContent = '✗ Erro ao enviar. Tenta novamente.';
+            btn.textContent = 'Enviar Candidatura';
+            btn.disabled = false;
+        }
+    });
+</script>
+
+</body>
+</html>
